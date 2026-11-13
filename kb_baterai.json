@@ -1,0 +1,21 @@
+{
+    "judul": "Kesehatan Baterai Laptop Windows",
+    "batas": "Aturan berasal dari panduan Dell (KB 000130117) dan dokumentasi Microsoft tentang powercfg. Berlaku untuk laptop Windows dengan menggunakan powercfg /batteryreport. Ambang adalah ambang dari merek Dell, merek lain bisa berbeda. Hasil hanya saran awal, bukan keputusan akhir.",
+    "sumber": {
+        "S1": "How to Generate a Battery Report Using the POWERCFG Command, Dell, https://www.dell.com/support/kbdoc/en-us/000130117, diakses 13 Nov 2026",
+        "S2": "Powercfg command-line options, Microsoft Learn, https://learn.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options, diakses 13 Nov 2026",
+        "S3": "Caring for your battery in Windows, Microsoft Support, https://support.microsoft.com/en-us/windows/experience/power-battery/caring-for-your-battery-in-windows, diakses 13 Nov 2026"
+    },
+    "kesimpulan": ["baterai perlu diganti", "baterai normal", "periksa pengaturan daya dan aplikasi", "ubah kebiasaan penggunaan dan pengisian", "hentikan pemakaian laptop segera"],
+    "aturan": [
+        {"id": "R1", "jika": ["kapasitas penuh di bawah 40% kapasitas desain"], "mode": "dan", "maka": "keausan tinggi", "sumber": "S1"},
+        {"id": "R2", "jika": ["keausan tinggi"], "mode": "dan", "maka": "baterai perlu diganti", "sumber": "S1"},
+        {"id": "R3", "jika": ["powercfg /requests menampilkan aplikasi atau driver yang menahan sleep"], "mode": "dan", "maka": "aplikasi menahan sleep", "sumber": "S2"},
+        {"id": "R4", "jika": ["ada periode drain tinggi di recent usage", "aplikasi menahan sleep", "powercfg /energy melaporkan masalah efisiensi energi"], "mode": "atau", "maka": "pemborosan daya dari penggunaan", "sumber": ["S1", "S2"]},
+        {"id": "R5", "jika": ["pemborosan daya dari penggunaan", "waktu pakai lebih pendek dari estimasi laporan"], "mode": "dan", "maka": "periksa pengaturan daya dan aplikasi", "sumber": "S1"},
+        {"id": "R6", "jika": ["selisih kapasitas desain dan penuh kecil", "waktu pakai sesuai estimasi laporan"], "mode": "dan", "maka": "baterai normal", "sumber": "S1"},
+        {"id": "R7", "jika": ["laptop sering dipakai atau diisi daya pada suhu tinggi", "level baterai sering berada di luar rentang 20%-80%"], "mode": "atau", "maka": "kebiasaan merusak baterai", "sumber": "S3"},
+        {"id": "R8", "jika": ["kebiasaan merusak baterai"], "mode": "dan", "maka": "ubah kebiasaan penggunaan dan pengisian", "sumber": "S3"},
+        {"id": "R9", "jika": ["baterai mengembang melebihi casing laptop"], "mode": "dan", "maka": "hentikan pemakaian laptop segera", "sumber": "S3"}
+    ]
+}
