@@ -56,25 +56,25 @@ Program diuji dengan empat kasus. Kasus 1 sampai 3 menghasilkan kesimpulan, seda
 
 **Fakta "ya":** selisih kapasitas desain dan penuh kecil, waktu pakai sesuai estimasi laporan. Hanya R6 yang terpenuhi, sehingga hasilnya `baterai normal`.
 
-![Kasus 1](screenshot/kasus1-normal.png)
+![Kasus 1](Screenshot/kasus1-normal.png)
 
 ### Kasus 2: periksa pengaturan daya dan ubah kebiasaan
 
 **Fakta "ya":** `powercfg /requests` menampilkan aplikasi atau driver yang menahan sleep, ada periode drain tinggi di recent usage, `powercfg /energy` melaporkan masalah efisiensi energi, waktu pakai lebih pendek dari estimasi laporan, laptop sering dipakai atau diisi daya pada suhu tinggi, level baterai sering di luar rentang 20%-80%. Dua rantai berjalan bersamaan: R3 → R4 → R5 menghasilkan `periksa pengaturan daya dan aplikasi`, dan R7 → R8 menghasilkan `ubah kebiasaan penggunaan dan pengisian`.
 
-![Kasus 2](screenshot/kasus2-periksa_kebiasaan.png)
+![Kasus 2](Screenshot/kasus2-periksa_kebiasaan.png)
 
 ### Kasus 3: baterai perlu diganti
 
 **Fakta "ya":** semua fakta kasus 2 ditambah kapasitas penuh di bawah 40% kapasitas desain. Rantai R1 → R2 ikut berjalan sehingga `baterai perlu diganti` muncul bersama dua kesimpulan dari kasus 2.
 
-![Kasus 3](screenshot/kasus3-ganti.png)
+![Kasus 3](Screenshot/kasus3-ganti.png)
 
 ### Kasus 4: tidak ada kesimpulan (kasus negatif)
 
 **Fakta "ya":** waktu pakai lebih pendek dari estimasi laporan saja. R5 membutuhkan `pemborosan daya dari penggunaan` yang tidak pernah terbentuk, sehingga tidak ada aturan yang terpenuhi dan program menampilkan bahwa tidak ada kesimpulan.
 
-![Kasus 4](screenshot/kasus4-negatif.png)
+![Kasus 4](Screenshot/kasus4-negatif.png)
 
 ## Batas Keberlakuan
 
