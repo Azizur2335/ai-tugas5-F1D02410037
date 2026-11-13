@@ -7,7 +7,7 @@
 
 Sistem pakar sederhana untuk menyimpulkan kondisi baterai laptop Windows dari data laporan `powercfg /batteryreport`, hasil `powercfg /requests` dan `powercfg /energy`, serta kebiasaan pemakaian.
 
-- **Bahasa:** Python [versi, cek dengan `python --version`]
+- **Bahasa:** Python 3.14.4
 - **Menjalankan:** `python main.py`
 - **File aturan:** `kb_baterai.json`
 
