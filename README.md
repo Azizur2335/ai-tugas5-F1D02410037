@@ -82,4 +82,4 @@ Pengetahuan dalam program ini berasal dari panduan Dell (S1), dokumentasi Micros
 
 ## Penggunaan Alat Bantu AI
 
-[Tulis jujur. Contoh: Claude (Anthropic) saya gunakan untuk membantu mencari referensi, menyusun draf aturan dan kerangka program. Saya memeriksa ulang isi sumber dan menyesuaikan aturan serta kode sendiri.]
+Saya menggunakan claude untuk brainstorming topik, meyusun draft README.md, serta membantu memperbaiki kode.
